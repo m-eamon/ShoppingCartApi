@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using ShoppingCartApi.Models;
 
 namespace ShoppingCartApi
 {
@@ -28,6 +30,11 @@ namespace ShoppingCartApi
         {
 
             services.AddControllers();
+
+        //SQL Server - Docker image
+            services.AddDbContext<CartContext>(options =>
+                     options.UseSqlServer(Configuration.GetConnectionString("LocalDockerConnection")));        
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ShoppingCartApi", Version = "v1" });
