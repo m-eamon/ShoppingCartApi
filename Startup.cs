@@ -42,7 +42,7 @@ namespace ShoppingCartApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CartContext cdb)
         {
             if (env.IsDevelopment())
             {
@@ -51,6 +51,8 @@ namespace ShoppingCartApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShoppingCartApi v1"));
             }
 
+            // create the ShoppingCartDB database
+            cdb.Database.EnsureCreated();
             app.UseHttpsRedirection();
 
             app.UseRouting();
