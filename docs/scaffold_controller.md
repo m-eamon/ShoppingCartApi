@@ -53,7 +53,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 export PATH=$HOME/.dotnet/tools:$PATH
 ```
 
-### Scaffold CartItem Controller
+### Scaffold CartItems Controller
 ```shell
 dotnet aspnet-codegenerator controller -name CartItemsController -async -api -m CartItem -dc CartContext -outDir Controllers
 
