@@ -10,6 +10,9 @@ To run in the background
 docker-compose up --build -d
 ```
 
+### Github repository
+https://github.com/m-eamon/ShoppingCartApi.git
+
 ### Connecting to the application
 The application runs on the port 5008.  To test the CRUD api calls:
 https://localhost:5008/swagger/index.html
