@@ -5,15 +5,15 @@ services:
         build: .
         ports:
           - "5008:8086"
-        depends_on: 
+        depends_on:
           - mysqldb
     mysqldb:
         container_name: shoppingcart-db
         build: mssql/.
         ports:
-          - "1433:1433"
-        environment:    
+          - "1434:1433"
+        environment:
           MSSQL_PID: "Developer"
           MSSQL_USER: "sa"
           MSSQL_SA_PASSWORD: "Passw0rd"
-          ACCEPT_EULA: "Y"           
+          ACCEPT_EULA: "Y"
