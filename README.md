@@ -1,5 +1,5 @@
-# ProductApi
-Api for Products
+# Shopping Cart Api
+Api for Shopping Cart
 
 * Project setup 
     * [Create Api](./docs/create_api.md)
